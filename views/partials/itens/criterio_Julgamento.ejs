@@ -1,0 +1,69 @@
+<form id="myForm">
+    <div class="container px-5 pb-3">
+        <!-- Cabeçalho da página  -->
+        <%- include('../titulo'); %>
+
+        <div class="bg-light rounded-4 py-5 px-4 px-md-5" style="height: 564px;">
+            <div class="container text-center h-100" >
+
+                <!-- 03 critério de julgamento-->
+                <div class="row h-50 justify-content-center">
+                    <div class="col-sm-12 align-self-start">
+                        <h2 class="fw-bolder">Critério de Julgamento &nbsp<i class="bi bi-question-circle text-success" data-bs-toggle="modal" data-bs-target="#modal3"></i></h2>
+                        <p class="lead fw-normal text-muted mb-0">
+                            Escolha o critério a ser utilizado na selação das propostas.
+                        </p>
+                    </div>
+                    <div class="col-sm-6 align-self-center">
+                        <div class="form-floating mb-3">
+                            <div class="input-group input-group-static">
+                                <select name="julgamento" id="julgamento" class="form-control text-center size-font">
+                                    <option noSelected>Selecione</option>
+                                    <option value="1">Menor preço</option>
+                                    <option value="2">Maior desconto</option>
+                                    <option value="3">Melhor técnica</option>
+                                    <option value="4">Técnica e preços</option>
+                                </select>
+                            </div>
+                            <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" name="item" value="<%= item %>">
+                <input type="hidden" name="id" value="<%= id %>">
+
+            </div> <!-- / container -->
+            <!-- Barra de progresso -->
+            <%- include('../progress-bar', {correntValue: progressBar} ); %>
+        </div><!-- / bg-light  -->
+    </div>
+    <!-- Botão do submit -->
+    <%- include('../buttons'); %>
+</form>
+
+
+
+<!-- Modal View 03 -->
+<div class="modal fade" id="modal3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-light">
+                <h1 class="modal-title fw-bolder fs-5 text-primary" id="modal3Label">Ajuda</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row  mb-3">
+                    <div class="col-2 text-center ">
+                        <h1><i class="bi bi-info-circle text-success" width="32" height="32"></i></h1>
+                    </div>
+                    <div class="col-10">
+                        <p class="fw-normal text-muted mb-0 text-justify">
+                            O critério de julgamento pode ser encontrado no documento de autorização ou  outro que consta no processo da contratação. Permanecendo a dúvida contate a unidade de compras.
+                        </p>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

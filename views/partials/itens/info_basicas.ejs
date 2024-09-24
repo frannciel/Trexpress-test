@@ -1,0 +1,42 @@
+<form id="myForm">
+    <div class="container px-5 pb-3">
+        <!-- Cabeçalho da página  -->
+        <%- include('../titulo'); %>
+
+        <div class="bg-light rounded-4 py-5 px-4 px-md-5" style="height: 564px;">
+            <div class="container text-center h-100" >
+
+                <!--  01 informações básicas-->
+                <div class="row h-50 justify-content-center">
+                    <div class="col-sm-12 align-self-start">
+                        <h2 class="fw-bolder">Informações Básicas &nbsp<i class="bi bi-question-circle"></i></h2>
+                        <p class="lead fw-normal text-muted mb-0">
+                            Informe o número do processo da contratação e a descrição de forma genérica do objeto a ser contratatado.
+                        </p>
+                    </div>
+                    <div class="col-sm-6 align-self-center">
+                        <!-- Name input-->
+                        <div class="form-floating mb-4 mt-5">
+                            <input class="form-control" id="processo" name="processo" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                            <label for="processo">Processo:</label>
+                            <div class="invalid-feedback" data-sb-feedback="processo:required">A name is required.</div>
+                        </div>
+
+                        <!-- Objeto input-->
+                        <div class="form-floating">
+                            <textarea class="form-control" id="objeto"  name="objeto" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                            <label for="objeto">Objeto</label>
+                            <div class="invalid-feedback" data-sb-feedback="objeto:required">O objeto é requerido.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <input type="hidden" name="item" value="7072696d6569726f">
+            </div> <!-- / container -->
+            <!-- Barra de progresso -->
+            <%- include('../progress-bar', {correntValue: 10} ); %>
+        </div><!-- / bg-light  -->
+    </div>
+    <!-- Botão do submit -->
+    <%- include('../buttons'); %>
+</form>
